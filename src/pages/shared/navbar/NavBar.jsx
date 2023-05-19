@@ -3,8 +3,11 @@ import logo from '../../../assets/logo_1_300x300.avif'
 import { Link } from 'react-router-dom';
 import { FaUserCircle } from "react-icons/fa";
 import './Navbar.css'
+import { useContext } from 'react';
+import { AuthContext } from '../../../AuthProvider/AuthProvider';
 
 const NavBar = () => {
+    const {user} =useContext(AuthContext)
     return (
         <div>
             <div className="navbar bg-base-100  ">
@@ -37,7 +40,7 @@ const NavBar = () => {
                             data-te-placement="top"
                             data-te-ripple-init
                             data-te-ripple-color="light"
-                            title="ggggggggggg">
+                            title={user?.email}>
                             <FaUserCircle></FaUserCircle>
                         </button>
                       

@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { createContext, useEffect, useState } from "react";
 import app from "../Firebase/Firebase.config";
-import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged,signInWithEmailAndPassword } from "firebase/auth";
 
 export const AuthContext = createContext()
 const auth = getAuth(app);
@@ -13,10 +13,15 @@ const AuthProvider = ({ children }) => {
         setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
     }
+    const loginWithEmail = (email, password) => {
+        setLoading(true)
+        return signInWithEmailAndPassword(auth, email, password)
+    }
 
     const AuthInfo = {
         user,
         registerWithEmail,
+        loginWithEmail,
 
     }
     useEffect(() => {
