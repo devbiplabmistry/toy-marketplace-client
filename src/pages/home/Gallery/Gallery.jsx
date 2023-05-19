@@ -8,7 +8,7 @@ const Gallery = () => {
             .then(res => res.json())
             .then(data => setGallery(data))
     }, [])
-    console.log(gallery);
+    // console.log(gallery);
     return (
         <div className="md:flex gap-4 mt-10 mb-10">
             {

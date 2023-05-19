@@ -4,6 +4,7 @@ import Home from "../pages/home/home/Home";
 import Register from "../pages/login/Register/Register";
 import Login from "../pages/login/Login/Login";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import ToyDetails from "../pages/home/ShopBy category/ToyDetails";
 const Router = createBrowserRouter([
     {
         path: "/",
@@ -18,8 +19,12 @@ const Router = createBrowserRouter([
                 element:<Register></Register>
             },
             {
-                path:"/login",
+                path:"login",
                 element:<Login></Login>
+            },
+            {
+                path:"ToyDetails",
+                element:<ToyDetails></ToyDetails>
             },
             {
                 path:"*",
