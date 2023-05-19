@@ -1,11 +1,13 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
+import { FaGoogle } from "react-icons/fa";
+
 
 
 const Register = () => {
-    const { registerWithEmail } = useContext(AuthContext)
-    const [error,setError]=useState()
+    const { registerWithEmail,SignInWithGoogle } = useContext(AuthContext)
+    const [error, setError] = useState()
     const handleRegister = (event) => {
         event.preventDefault()
         const form = event.target;
@@ -20,8 +22,19 @@ const Register = () => {
             })
             .catch((error) => {
                 const errorMessage = error.message;
-               setError(errorMessage)
+                setError(errorMessage)
             });
+    }
+    const handleGoogleRegister = () => {
+        SignInWithGoogle()
+        .then((result) => {
+            const user = result.user;
+            console.log(user);
+          }).catch((error) => {
+            const errorCode = error.message;
+            setError(errorCode)
+          });
+
     }
     return (
         <div className="hero min-h-screen bg-base-200">
@@ -56,10 +69,15 @@ const Register = () => {
                             <div className="form-control mt-6">
                                 <button type="submit" className="btn btn-primary">Register NOW !!</button>
                             </div>
+                            <div className="divider divider-horizontal text-center mx-auto">OR
+                                <h3 onClick={handleGoogleRegister} className="text-center text-lg">
+                                    <FaGoogle></FaGoogle>
+                                </h3>
+                            </div>
                         </div>
                     </form>
                     <div className="login p-8 text-center">
-                     <p><small>{error}</small></p>
+                        <p><small>{error}</small></p>
                     </div>
                     <div className="login p-8 text-center">
                         <Link to="/login"><p><small>Are you already register ??</small></p></Link>

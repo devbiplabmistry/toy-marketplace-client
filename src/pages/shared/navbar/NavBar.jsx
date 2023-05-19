@@ -7,7 +7,15 @@ import { useContext } from 'react';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
 
 const NavBar = () => {
-    const {user} =useContext(AuthContext)
+    const { logOut,user } = useContext(AuthContext)
+    const handleLogOut = () => {
+        logOut()
+            .then(() => {
+                alert('Log out sucessfully')
+            }).catch((error) => {
+                console.log(error);
+            });
+    }
     return (
         <div>
             <div className="navbar bg-base-100  ">
@@ -29,21 +37,26 @@ const NavBar = () => {
                 <div className="navbar-center">
                     <Link className="btn btn-ghost normal-case text-xl">Home</Link>
                     <Link className="btn btn-ghost normal-case text-xl">All Toys</Link>
-                    <Link className="btn btn-ghost normal-case text-xl">My Toys</Link>
-                    <Link className="btn btn-ghost normal-case text-xl">Add A Toy</Link>
+                    {user?.email && <> <Link className="btn btn-ghost normal-case text-xl">My Toys</Link>
+                        <Link className="btn btn-ghost normal-case text-xl">Add A Toy</Link></>}
                     <Link className="btn btn-ghost normal-case text-xl">Blogs</Link>
+                 {
+                    user &&   <Link onClick={handleLogOut} className="btn btn-ghost normal-case text-xl">Logout</Link>
+                 }
                 </div>
                 <div className="navbar-end">
                     <div className="rounded-full">
-                        <button
-                            data-te-toggle="tooltip"
-                            data-te-placement="top"
-                            data-te-ripple-init
-                            data-te-ripple-color="light"
-                            title={user?.email}>
-                            <FaUserCircle></FaUserCircle>
-                        </button>
-                      
+                        {
+                            user?.email ? <button
+                                data-te-toggle="tooltip"
+                                data-te-placement="top"
+                                data-te-ripple-init
+                                data-te-ripple-color="light"
+                                title={user?.email}>
+                                <FaUserCircle></FaUserCircle>
+                            </button> :
+                               <Link to="/login"> <button className='text-cyan-400'>Login</button></Link>
+                        }
                     </div>
                 </div>
             </div>

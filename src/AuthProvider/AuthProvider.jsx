@@ -1,9 +1,10 @@
 /* eslint-disable no-unused-vars */
 import { createContext, useEffect, useState } from "react";
 import app from "../Firebase/Firebase.config";
-import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged,signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth,signInWithPopup,GoogleAuthProvider ,signOut, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
 
 export const AuthContext = createContext()
+const provider = new GoogleAuthProvider();
 const auth = getAuth(app);
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState();
@@ -17,11 +18,19 @@ const AuthProvider = ({ children }) => {
         setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
+    const logOut = () => {
+      return  signOut(auth);
+    }
+    const SignInWithGoogle =()=>{
+        return signInWithPopup(auth, provider)
+    }
 
     const AuthInfo = {
         user,
         registerWithEmail,
         loginWithEmail,
+        logOut,
+        SignInWithGoogle,
 
     }
     useEffect(() => {
