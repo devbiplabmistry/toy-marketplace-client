@@ -14,7 +14,6 @@ const Gallery = () => {
             {
                 gallery.map(gallerys => <GalleryCard key={gallerys._id} gallery={gallerys} ></GalleryCard>)
             }
-
         </div>
     );
 };

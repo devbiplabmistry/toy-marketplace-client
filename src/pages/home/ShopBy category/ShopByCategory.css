@@ -1,0 +1,6 @@
+.category .react-tabs__tab-list{
+    border: 0;
+}
+.category .react-tabs__tab--selected {
+    border-color: transparent;
+}
