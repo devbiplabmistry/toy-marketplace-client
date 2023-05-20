@@ -5,9 +5,6 @@ import { useLoaderData } from "react-router-dom";
 const ToyDetails = () => {
     const data=useLoaderData()
     console.log(data);
-    
-   
-  
     return (
         <div>
             <div className="card w-96 bg-base-100 shadow-xl text-center mx-auto mt-10 mb-10">
