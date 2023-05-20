@@ -19,9 +19,11 @@ const AuthProvider = ({ children }) => {
         return signInWithEmailAndPassword(auth, email, password)
     }
     const logOut = () => {
+        setLoading(true)
       return  signOut(auth);
     }
     const SignInWithGoogle =()=>{
+        setLoading(true)
         return signInWithPopup(auth, provider)
     }
 
@@ -30,6 +32,7 @@ const AuthProvider = ({ children }) => {
         registerWithEmail,
         loginWithEmail,
         logOut,
+        loading,
         SignInWithGoogle,
     }
     // console.log(singleToy);

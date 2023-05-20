@@ -1,6 +1,13 @@
 /* eslint-disable react/prop-types */
 
+import { useContext } from "react";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+
 const MyToyDetails = ({ toy, handleDelete }) => {
+    const {user,loading} =useContext(AuthContext)
+    if(loading){
+        return <progress className="progress w-56"></progress>
+    }
 
     return (
         <>

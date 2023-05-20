@@ -11,12 +11,8 @@ const MyToy = () => {
             .then(res => res.json())
             .then(data => setUserToy(data))
     }, [])
-
-
-
     const myToys = userToy.filter(toy => toy.sellerEmail == user?.email)
     console.log(myToys);
-
 
     const handleDelete = (id) => {
         Swal.fire({
@@ -44,13 +40,11 @@ const MyToy = () => {
         })
 
     }
-
-   
+    
 
     return (
         <div className="overflow-x-auto">
             <table className="table table-zebra w-full">
-                {/* head */}
                 <thead>
                     <tr>
                         <th></th>
@@ -59,8 +53,8 @@ const MyToy = () => {
                         <th>Toy Name</th>
                         <th>Sub Category</th>
                         <th>Price</th>
-                        <th>Discription</th>
                         <th>Available Quantity</th>
+                        <th>Discription</th>
                         <th></th>
                         <th></th>
                     </tr>
