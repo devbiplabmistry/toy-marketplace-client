@@ -5,6 +5,9 @@ import Register from "../pages/login/Register/Register";
 import Login from "../pages/login/Login/Login";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import ToyDetails from "../pages/home/ShopBy category/ToyDetails";
+import AddToy from "../pages/addAToy/AddToy";
+import MyToy from "../pages/allToy/AllToy";
+import AllToy from "../pages/allToy/AllToy";
 const Router = createBrowserRouter([
     {
         path: "/",
@@ -26,6 +29,15 @@ const Router = createBrowserRouter([
                 path: "/toy/:id",
                 element: <ToyDetails></ToyDetails>,
                 loader: ({ params }) => fetch(`http://localhost:5000/toy/${params.id}`)
+            },
+            {
+                path: "/addToy",
+                element: <AddToy></AddToy>,
+            },
+            {
+                path: "/allToy",
+                element:<AllToy></AllToy>,
+                loader: () => fetch('http://localhost:5000/addToy')
             },
             {
                 path: "*",

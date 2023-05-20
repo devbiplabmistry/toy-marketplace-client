@@ -37,7 +37,7 @@ const NavBar = () => {
                 <div className="navbar-center">
                     <Link className="btn btn-ghost normal-case text-xl">Home</Link>
                     <Link className="btn btn-ghost normal-case text-xl">All Toys</Link>
-                    {user?.email && <> <Link className="btn btn-ghost normal-case text-xl">My Toys</Link>
+                    {user?.email && <> <Link to="/myToy" className="btn btn-ghost normal-case text-xl">My Toys</Link>
                         <Link className="btn btn-ghost normal-case text-xl">Add A Toy</Link></>}
                     <Link className="btn btn-ghost normal-case text-xl">Blogs</Link>
                  {
