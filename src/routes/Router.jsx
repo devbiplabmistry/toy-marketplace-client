@@ -7,7 +7,9 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import ToyDetails from "../pages/home/ShopBy category/ToyDetails";
 import AddToy from "../pages/addAToy/AddToy";
 import AllToy from "../pages/allToy/AllToy";
-import MyToy from "../pages/myToy/MyToy";
+import MyToy from "../pages/MyToy/MyToy";
+import Blog from "../pages/Blog/Blog";
+import PrivetRoute from "../pages/PrivetRoute/PrivetRoute";
 const Router = createBrowserRouter([
     {
         path: "/",
@@ -27,12 +29,12 @@ const Router = createBrowserRouter([
             },
             {
                 path: "/toy/:id",
-                element: <ToyDetails></ToyDetails>,
+                element: <PrivetRoute><ToyDetails></ToyDetails></PrivetRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/toy/${params.id}`)
             },
             {
                 path: "/addToy",
-                element: <AddToy></AddToy>,
+                element: <PrivetRoute><AddToy></AddToy></PrivetRoute>
             },
             {
                 path: "/allToy",
@@ -41,8 +43,13 @@ const Router = createBrowserRouter([
             },
             {
                 path: "/myToy",
-                element:<MyToy></MyToy>
+                element:<PrivetRoute><MyToy></MyToy></PrivetRoute>
             },
+            {
+                path: "/blogs",
+                element:<Blog></Blog>
+            },
+          
             {
                 path: "*",
                 element: <ErrorPage></ErrorPage>

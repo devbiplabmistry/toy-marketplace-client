@@ -9,7 +9,6 @@ const Login = () => {
     const {loginWithEmail} =useContext(AuthContext)
     const from = location.state?.from?.pathname || '/';
     console.log(location);
-    console.log(from);
     const navigate =useNavigate()
     const handleLogin =(event)=>{
         event.preventDefault()
@@ -19,7 +18,6 @@ const Login = () => {
         loginWithEmail(email,password)
         .then((userCredential) => {
             const user = userCredential.user;
-            console.log(user);
             Swal.fire({
                 position: 'top-end',
                 icon: 'success',
