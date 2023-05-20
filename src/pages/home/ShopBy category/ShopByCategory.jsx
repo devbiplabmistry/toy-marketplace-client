@@ -18,12 +18,13 @@ const ShopByCategory = () => {
 
     return (
         < div>
+        <h1 className='text-center font-bold text-6xl mt-5 mb-10 text-orange-400'>Shop By Category</h1>
             <Tabs>
                 <TabList className="flex justify-center gap-4 mb-4">
                     <Tab></Tab>
-                    <Tab>Math Category</Tab>
-                    <Tab>Science Category</Tab>
-                    <Tab>Physics Category</Tab>
+                    <Tab className="border-2 font-medium bg-slate-950 text-white p-2 rounded-lg">Math Category</Tab>
+                    <Tab className="border-2 font-medium bg-slate-950 text-white p-2 rounded-lg">Science Category</Tab>
+                    <Tab className="border-2 font-medium bg-slate-950 text-white p-2 rounded-lg">Physics Category</Tab>
                 </TabList>
                 <TabPanel>
                     <h2></h2>
