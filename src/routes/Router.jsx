@@ -10,6 +10,7 @@ import AllToy from "../pages/allToy/AllToy";
 import MyToy from "../pages/MyToy/MyToy";
 import Blog from "../pages/Blog/Blog";
 import PrivetRoute from "../pages/PrivetRoute/PrivetRoute";
+import Update from "../pages/Update/Update";
 const Router = createBrowserRouter([
     {
         path: "/",
@@ -38,18 +39,23 @@ const Router = createBrowserRouter([
             },
             {
                 path: "/allToy",
-                element:<AllToy></AllToy>,
+                element: <AllToy></AllToy>,
                 loader: () => fetch('http://localhost:5000/allToy')
             },
             {
                 path: "/myToy",
-                element:<PrivetRoute><MyToy></MyToy></PrivetRoute>
+                element: <PrivetRoute><MyToy></MyToy></PrivetRoute>
             },
             {
                 path: "/blogs",
-                element:<Blog></Blog>
+                element: <Blog></Blog>
             },
-          
+            {
+                path: "/addToy/:id",
+                element: <Update></Update>,
+                loader: ({ params }) =>fetch(`http://localhost:5000/addToy/${params.id}`)
+            },
+
             {
                 path: "*",
                 element: <ErrorPage></ErrorPage>

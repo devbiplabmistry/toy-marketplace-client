@@ -32,13 +32,11 @@ const MyToy = () => {
                     .then(res => res.json())
                     .then(data => {
                         console.log(data);
-                        alert('You deleted sucessfully')
                     })
             } else if (result.isDenied) {
                 Swal.fire('Changes are not saved', '', 'info')
             }
         })
-
     }
     
 
