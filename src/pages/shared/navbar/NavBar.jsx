@@ -38,7 +38,7 @@ const NavBar = () => {
                     <Link className="btn btn-ghost normal-case text-xl">Home</Link>
                     <Link to="/allToy" className="btn btn-ghost normal-case text-xl">All Toys</Link>
                     {user?.email && <> <Link to="/myToy" className="btn btn-ghost normal-case text-xl">My Toys</Link>
-                        <Link className="btn btn-ghost normal-case text-xl">Add A Toy</Link></>}
+                        <Link to="/addToy" className="btn btn-ghost normal-case text-xl">Add A Toy</Link></>}
                     <Link className="btn btn-ghost normal-case text-xl">Blogs</Link>
                  {
                     user &&   <Link onClick={handleLogOut} className="btn btn-ghost normal-case text-xl">Logout</Link>

@@ -1,10 +1,9 @@
-import React from 'react';
+/* eslint-disable react/prop-types */
 
 const AllToyDetails = ({toys}) => {
     return (
         <>
             <tbody >
-                {/* row 1 */}
                 <tr>
                     <th>1</th>
                     <td>{toys.sellerName}</td>
