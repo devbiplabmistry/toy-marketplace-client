@@ -9,26 +9,27 @@ const Router = createBrowserRouter([
     {
         path: "/",
         element: <Main></Main>,
-        children:[
+        children: [
             {
-                path:"/",
-                element:<Home></Home>
+                path: "/",
+                element: <Home></Home>
             },
             {
-                path:"/register",
-                element:<Register></Register>
+                path: "/register",
+                element: <Register></Register>
             },
             {
-                path:"login",
-                element:<Login></Login>
+                path: "login",
+                element: <Login></Login>
             },
             {
-                path:"ToyDetails",
-                element:<ToyDetails></ToyDetails>
+                path: "/toy/:id",
+                element: <ToyDetails></ToyDetails>,
+                loader: ({ params }) => fetch(`http://localhost:5000/toy/${params.id}`)
             },
             {
-                path:"*",
-                element:<ErrorPage></ErrorPage>
+                path: "*",
+                element: <ErrorPage></ErrorPage>
             }
         ]
     }

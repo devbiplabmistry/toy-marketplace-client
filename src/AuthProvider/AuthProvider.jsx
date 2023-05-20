@@ -7,10 +7,8 @@ export const AuthContext = createContext()
 const provider = new GoogleAuthProvider();
 const auth = getAuth(app);
 const AuthProvider = ({ children }) => {
-    const [singleToy, setSingleToy] = useState();
     const [user, setUser] = useState();
     const [loading, setLoading] = useState(true);
-    console.log(singleToy);
 
     const registerWithEmail = (email, password) => {
         setLoading(true)
@@ -33,8 +31,6 @@ const AuthProvider = ({ children }) => {
         loginWithEmail,
         logOut,
         SignInWithGoogle,
-     setSingleToy,
-     singleToy,
     }
     // console.log(singleToy);
     useEffect(() => {

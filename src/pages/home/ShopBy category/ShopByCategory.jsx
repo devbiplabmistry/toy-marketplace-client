@@ -1,46 +1,21 @@
 
-import { useContext, useEffect, useState } from 'react';
+import {  useEffect, useState } from 'react';
 import './ShopByCategory.css'
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
-import { AuthContext } from '../../../AuthProvider/AuthProvider';
-import {  useNavigate } from 'react-router-dom'
-import Swal from 'sweetalert2';
+import {  Link } from 'react-router-dom'
+
 
 const ShopByCategory = () => {
-    const { user,setSingleToy } = useContext(AuthContext);
     const [category, setCategory] = useState([])
-    // console.log(location);
     useEffect(() => {
-        fetch('data.json')
+        fetch('http://localhost:5000/toy')
             .then(res => res.json())
             .then(data => setCategory(data))
     }, [])
     const mathCategory = category.filter(c => c.category === 'math')
     const scienceCategory = category.filter(s => s.category === 'science')
     const physicsCategory = category.filter(p => p.category === 'physics toy')
-    const Navigate = useNavigate()
 
-    const handleDetails = (id) => {
-        if (!user?.email) {
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'You have to login First to view Details',
-                footer: '<a href="">Why do I have this issue?</a>'
-
-            })
-
-            return Navigate("/login")
-        }
-        else {
-            const View = category.find(cat => cat._id === id)
-            // console.log(View);
-            setSingleToy(View)
-            Navigate("/ToyDetails")
-        }
-
-
-    }
     return (
         < div>
             <Tabs>
@@ -60,7 +35,7 @@ const ShopByCategory = () => {
                                 {m.name}
                                 <p>Price $:{m.price}</p>
                                 <p>Ratting:{m.ratting}</p>
-                                <button onClick={() => handleDetails(m._id)} className="btn btn-active btn-secondary mt-4 mb-4">View Details</button>
+                              <Link to={`/toy/${m._id}`}><button className="btn btn-active btn-secondary mt-4 mb-4">View Details</button></Link>
                             </div>)
                         }
                     </div>
@@ -71,7 +46,7 @@ const ShopByCategory = () => {
                             {s.name}
                             <p>Price $:{s.price}</p>
                             <p>Ratting:{s.ratting}</p>
-                            <button onClick={() => handleDetails(s._id)} className="btn btn-active btn-secondary mt-4 mb-4">View Details</button>
+                            <Link to={`/toy/${s._id}`}><button className="btn btn-active btn-secondary mt-4 mb-4">View Details</button></Link>
                         </div>)
                     }
                 </TabPanel>
@@ -81,7 +56,7 @@ const ShopByCategory = () => {
                             {p.name}
                             <p>Price $:{p.price}</p>
                             <p>Ratting:{p.ratting}</p>
-                            <button onClick={() => handleDetails(p._id)} className="btn btn-active btn-secondary mt-4 mb-4">View Details</button>
+                            <Link to={`/toy/${p._id}`}><button className="btn btn-active btn-secondary mt-4 mb-4">View Details</button></Link>
                         </div>)
                     }
                 </TabPanel>
