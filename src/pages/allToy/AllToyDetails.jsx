@@ -7,7 +7,7 @@ const AllToyDetails = ({toys}) => {
         <>
             <tbody >
                 <tr>
-                    <th></th>
+                    <th><img className="w-20 h-20 rounded-lg" src={toys.url} alt="" /></th>
                     <td>{toys.sellerName}</td>
                     <td>{toys?.name}</td>
                     <td>{toys?.subQuantity}</td>

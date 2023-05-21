@@ -16,7 +16,6 @@ const FeedBack = () => {
                 {
                     feedBack.map(feedback => <FeedBackComments key={feedback._id} feedbacks={feedback}></FeedBackComments>)
                 }
-
             </div>
         </>
     );

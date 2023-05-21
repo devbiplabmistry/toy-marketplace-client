@@ -2,7 +2,6 @@
 import Swal from "sweetalert2";
 const AddToy = () => {
 
-
     const handleAdded = (event) => {
         event.preventDefault()
         const form =event.target;
@@ -41,9 +40,9 @@ const AddToy = () => {
                 'You clicked the button!',
                 'success'
               )
+              form.reset()
         })
     }
-
     return (
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col lg:flex-col text-center">
@@ -79,9 +78,9 @@ const AddToy = () => {
                             </div>
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Sub Quantity</span>
+                                    <span className="label-text">Sub Category</span>
                                 </label>
-                                <input type="text" name="subQuantity" placeholder="sub quantity" className="input input-bordered" />
+                                <input type="text" name="subQuantity" placeholder="sub category" className="input input-bordered" />
                             </div>
                             <div className="form-control">
                                 <label className="label">

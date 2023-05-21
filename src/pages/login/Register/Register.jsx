@@ -2,8 +2,7 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
 import { FaGoogle } from "react-icons/fa";
-
-
+import Swal from "sweetalert2";
 
 const Register = () => {
     const { registerWithEmail,SignInWithGoogle } = useContext(AuthContext)
@@ -11,14 +10,20 @@ const Register = () => {
     const handleRegister = (event) => {
         event.preventDefault()
         const form = event.target;
-        const name = form.name.value;
+        // const name = form.name.value;
         const email = form.email.value;
-        const photo = form.photo.value;
+        // const photo = form.photo.value;
         const password = form.password.value;
         registerWithEmail(email, password)
             .then((userCredential) => {
                 const user = userCredential.user;
                 console.log(user);
+                Swal.fire(
+                    'You register sucessfully',
+                    'You clicked the button!',
+                    'success'
+                  )
+                  form.reset()
             })
             .catch((error) => {
                 const errorMessage = error.message;

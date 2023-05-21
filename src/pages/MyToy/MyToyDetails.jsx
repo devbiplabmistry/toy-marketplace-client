@@ -14,7 +14,7 @@ const MyToyDetails = ({ toy, handleDelete }) => {
         <>
             <tbody >
                 <tr>
-                    <th></th>
+                    <th><img className="w-20 h-20 rounded-lg" src={toy?.url} alt="" /></th>
                     <td>{toy?.photo}</td>
                     <td>{toy.sellerName}</td>
                     <td>{toy?.name}</td>
@@ -23,7 +23,7 @@ const MyToyDetails = ({ toy, handleDelete }) => {
                     <td>{toy?.AvailableQuantity}</td>
                     <td>{toy?.discription}</td>
                     <Link to={`/addToy/${toy._id}`}><td className="btn btn-secondary mt-1 mb-1 mr-12 text-black">Update</td></Link>
-                    <td onClick={() => handleDelete(toy._id)} className="btn btn-secondary mt-1 mb-1 text-black">Deleted</td>
+                    <td onClick={() => handleDelete(toy._id)} className="btn btn-secondary mt-1 mb-1 text-black">X</td>
                 </tr>
             </tbody>
         </>
