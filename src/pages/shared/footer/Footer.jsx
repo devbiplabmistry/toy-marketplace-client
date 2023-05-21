@@ -3,8 +3,11 @@ import logo from '../../../assets/logo_1_300x300.avif'
 
 const Footer = () => {
     return (
-        <footer className="footer sm:grid text-center sm:grid-cols-2 md:grid-rows-none p-10  bg-base-200 text-base-content mt-10">
-            <div>
+        <footer className="footer sm:grid text-center sm:grid-cols-2 md:grid-cols-3 p-10  bg-base-200 text-base-content mt-10">
+            <div  data-aos="fade-left"
+                        data-aos-anchor="#example-anchor"
+                        data-aos-offset="500"
+                        data-aos-duration="2000">
                 <img className='sm:w-20' src={logo} alt="" />
                 <div className='flex'>
                     <FaFacebook className='mr-2'></FaFacebook>
@@ -19,21 +22,30 @@ const Footer = () => {
                     Instagram
                 </div>
             </div>
-            <div>
+            <div  data-aos="fade-right"
+                        data-aos-anchor="#example-anchor"
+                        data-aos-offset="500"
+                        data-aos-duration="2000">
                 <span className="footer-title">Services</span>
                 <a className="link link-hover">Branding</a>
                 <a className="link link-hover">Design</a>
                 <a className="link link-hover">Marketing</a>
                 <a className="link link-hover">Advertisement</a>
             </div>
-            <div>
+            <div  data-aos="fade-bottom"
+                        data-aos-anchor="#example-anchor"
+                        data-aos-offset="500"
+                        data-aos-duration="2000">
                 <span className="footer-title">Company</span>
                 <a className="link link-hover">About us</a>
                 <a className="link link-hover">Contact</a>
                 <a className="link link-hover">Jobs</a>
                 <a className="link link-hover">Press kit</a>
             </div>
-            <div>
+            <div  data-aos="fade-right"
+                        data-aos-anchor="#example-anchor"
+                        data-aos-offset="500"
+                        data-aos-duration="2000">
                 <span className="footer-title">Legal</span>
                 <a className="link link-hover">Terms of use</a>
                 <a className="link link-hover">Privacy policy</a>
