@@ -1,0 +1,20 @@
+[
+    {
+        "id": "1",
+        "picture": "https://media.istockphoto.com/id/1150384559/photo/happy-african-american-businessman-using-phone-mobile-apps-at-workplace.jpg?b=1&s=170667a&w=0&k=20&c=LHzX6wrnLtaXpUukN-4fBUzCSj8TUxpH2WwLxOn2gxo=",
+        "name": "Jack",
+        "feedBack": "Quam pellentesque nec nam aliquam sem et tortor. Sed risus ultricies tristique nulla aliquet enim tortor. Egestas congue quisque egestas diam in arcu."
+    },
+    {
+        "id": "2",
+        "picture": "https://media.istockphoto.com/id/1384357158/photo/portrait-of-a-beautiful-mexican-woman.jpg?b=1&s=170667a&w=0&k=20&c=sNzHC0E61lT6LYJ9XPmnUTGhqLxDtusrxbm8YcP1Qic=",
+        "name": "Merlin Doli",
+        "feedBack": "Risus sed vulputate odio ut enim. Ultrices tincidunt arcu non sodales. Volutpat lacus laoreet non curabitur gravida arcu. Dapibus ultrices in iaculis nunc"
+    },
+    {
+        "id": "3",
+        "picture": "https://media.istockphoto.com/id/1060638258/photo/portrait-of-a-beautiful-hispanic-woman.jpg?b=1&s=170667a&w=0&k=20&c=AoRWjOtMIibHJaMjZY8o-eRmyM4r_ExX47r054CjSv0=",
+        "name": "Disosa",
+        "feedBack": "Tincidunt id aliquet risus feugiat. Nunc sed id semper risus. Turpis massa sed elementum tempus egestas sed sed risus pretium sit erentel dioti loe.&nbsp;"
+    }
+]
