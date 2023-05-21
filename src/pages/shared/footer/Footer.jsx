@@ -3,9 +3,9 @@ import logo from '../../../assets/logo_1_300x300.avif'
 
 const Footer = () => {
     return (
-        <footer className="footer p-10 bg-base-200 text-base-content mt-10">
+        <footer className="footer sm:grid text-center sm:grid-cols-2 md:grid-rows-none p-10  bg-base-200 text-base-content mt-10">
             <div>
-                <img src={logo} alt="" />
+                <img className='sm:w-20' src={logo} alt="" />
                 <div className='flex'>
                     <FaFacebook className='mr-2'></FaFacebook>
                     Facebook

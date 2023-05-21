@@ -6,7 +6,7 @@ const Works = () => {
     return (
         <div>
                 <h1 className='text-6xl text-center mt-10 font-bold text-orange-400'>Here's how it works</h1>
-            <div className="Works-wrapper flex justify-center justify-between mt-8 mb-12">
+            <div className="Works-wrapper flex sm:flex-col md:flex-row sm:items-center gap-8 justify-center justify-between mt-8 mb-12">
                 <div className="item">
                     <div className="logo">
                         <img src={icon1} alt="" />

@@ -12,7 +12,7 @@ const FeedBack = () => {
     return (
         <>
             <h1 className="font-bold text-6xl text-center mt-20 mb-5">What our Customer Say</h1>
-            <div className="flex gap-4">
+            <div className="flex md:flex-row sm:flex-col sm:items-center gap-4">
                 {
                     feedBack.map(feedback => <FeedBackComments key={feedback._id} feedbacks={feedback}></FeedBackComments>)
                 }

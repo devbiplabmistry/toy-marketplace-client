@@ -30,9 +30,9 @@ const ShopByCategory = () => {
                     <h2></h2>
                 </TabPanel>
                 <TabPanel>
-                    <div className='mt-10 mb-10'>
+                    <div className='mt-10 mb-10 mx-auto'>
                         {
-                            mathCategory.map(m => <div key={m._id}> <img className='rounded-lg' src={m.picture} alt="" />
+                            mathCategory.map(m => <div key={m._id}> <img className='rounded-lg text-center' src={m.picture} alt="" />
                                 {m.name}
                                 <p>Price $:{m.price}</p>
                                 <p>Ratting:{m.ratting}</p>
