@@ -7,7 +7,7 @@ const MyToy = () => {
     const { user } = useContext(AuthContext)
     const [userToy, setUserToy] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/alltoy')
+        fetch('https://toy-server-liart.vercel.app/alltoy')
             .then(res => res.json())
             .then(data => setUserToy(data))
     }, [])
@@ -26,7 +26,7 @@ const MyToy = () => {
                 Swal.fire('Deleted!', '', 'success')
                 const remaining = myToys.filter(toy => toy._id != id)
                 setUserToy(remaining)
-                fetch(`http://localhost:5000/alltoy/${id}`, {
+                fetch(`https://toy-server-liart.vercel.app/alltoy/${id}`, {
                     method: 'DELETE',
                 })
                     .then(res => res.json())

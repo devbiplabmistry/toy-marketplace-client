@@ -28,7 +28,7 @@ const Update = () => {
             AvailableQuantity,
             discription
         }
-        fetch(`http://localhost:5000/addToy/${updatedData._id}`,{
+        fetch(`https://toy-server-liart.vercel.app/addToy/${updatedData._id}`,{
             method:'PUT',
             headers: {
                 "Content-Type": "application/json",

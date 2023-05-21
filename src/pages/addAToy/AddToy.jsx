@@ -26,7 +26,7 @@ const AddToy = () => {
             AvailableQuantity,
             discription
         }
-        fetch('http://localhost:5000/addToy',{
+        fetch('https://toy-server-liart.vercel.app/addToy',{
             method:'POST',
             headers: {
                 "Content-Type": "application/json",

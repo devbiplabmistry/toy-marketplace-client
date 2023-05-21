@@ -32,7 +32,7 @@ const Router = createBrowserRouter([
             {
                 path: "/toy/:id",
                 element: <PrivetRoute><ToyDetails></ToyDetails></PrivetRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/toy/${params.id}`)
+                loader: ({ params }) => fetch(`https://toy-server-liart.vercel.app/toy/${params.id}`)
             },
             {
                 path: "/addToy",
@@ -41,7 +41,7 @@ const Router = createBrowserRouter([
             {
                 path: "/allToy",
                 element: <AllToy></AllToy>,
-                loader: () => fetch('http://localhost:5000/allToy')
+                loader: () => fetch('https://toy-server-liart.vercel.app/allToy')
             },
             {
                 path: "/myToy",
@@ -54,12 +54,12 @@ const Router = createBrowserRouter([
             {
                 path: "/details/:id",
                 element: <ViewDetails></ViewDetails>,
-                loader: ({ params }) =>fetch(`http://localhost:5000/alltoy/${params.id}`)
+                loader: ({ params }) =>fetch(`https://toy-server-liart.vercel.app/alltoy/${params.id}`)
             },
             {
                 path: "/addToy/:id",
                 element: <Update></Update>,
-                loader: ({ params }) => fetch(`http://localhost:5000/addToy/${params.id}`)
+                loader: ({ params }) => fetch(`https://toy-server-liart.vercel.app/addToy/${params.id}`)
             },
 
             {

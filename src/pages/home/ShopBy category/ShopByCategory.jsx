@@ -8,7 +8,7 @@ import {  Link } from 'react-router-dom'
 const ShopByCategory = () => {
     const [category, setCategory] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/toy')
+        fetch('https://toy-server-liart.vercel.app/toy')
             .then(res => res.json())
             .then(data => setCategory(data))
     }, [])
